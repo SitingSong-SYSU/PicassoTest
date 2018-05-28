@@ -1,16 +1,20 @@
 # demo检查Picasso图片加载器加载时间
 
-1. 操作方式
+## 环境
+- 开发环境 Android Studio 3.0.1
+- 运行环境 Android 5.0.2
+
+## 操作方式
 点击click按钮，跳转选择图片，log图片加载时长并提示加载过慢的图片
 
-2. 示例
+## 示例
 ![示例](./asset/1-1.png)
 
-3. 使用库
-加载器：Picasso
-图片选择控件：VanGogh
+## 使用库
+- 加载器：Picasso
+- 图片选择控件：VanGogh
 
-4. 计算代码
+## 计算代码
 GlideImageLoader类
 ```
 final long currentLoadStartTime = System.currentTimeMillis();
