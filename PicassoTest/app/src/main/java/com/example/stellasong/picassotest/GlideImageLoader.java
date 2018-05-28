@@ -14,7 +14,7 @@ import com.youth.banner.loader.ImageLoader;
 import static android.widget.Toast.LENGTH_LONG;
 
 public class GlideImageLoader extends ImageLoader implements VanImageLoader {
-    private static final String TAG = "111";
+    private static final String TAG = "GlideImageLoader";
 
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
@@ -32,8 +32,10 @@ public class GlideImageLoader extends ImageLoader implements VanImageLoader {
                     @Override
                     public void onSuccess() {
                         long countTime = System.currentTimeMillis() - currentLoadStartTime;
-                        if (countTime >= 500)  Log.i(TAG, "Load Too Slow!!!");
-                        Log.i(TAG, "Load file " + uri.toString() + " count time: " + countTime);
+                        if (countTime >= 500) {
+                            Log.i(TAG, "Load Too Slow!!!");
+                        }
+                        Log.i(TAG, "Load file " + uri.toString() + " count time: " + countTime + "ms");
                     }
 
                     @Override

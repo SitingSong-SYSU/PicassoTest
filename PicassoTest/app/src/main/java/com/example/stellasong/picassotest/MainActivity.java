@@ -30,24 +30,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button bt = (Button) findViewById(R.id.bt);
+        Button bt = findViewById(R.id.bt);
         bt.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                addPicasso(true);
+                addPicasso();
             }
         });
     }
 
-    public void addPicasso(boolean isGranted) {
-        if (!isGranted) {
-            return;
-        }
-
+    public void addPicasso() {
         VanGogh.from(MainActivity.this)
                 .choose(VanMediaType.ofAll())
-                .countable(false)//若开启裁剪，则无效
+                .countable(false)
                 .rowCount(3)
                 .cameraVisible(true, getPackageName())
                 .withResultSize(1024, 1024)
